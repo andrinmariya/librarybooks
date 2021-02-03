@@ -1,0 +1,42 @@
+
+
+<div
+    class="p-5  bg-image"
+    style=" background-image: url('/assets/f1.jpg');
+      height: 600px;
+    "
+  >
+
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <br/>
+          <br/>
+          <h1 class="mb-3">Forgot your password?</h1>
+          <br/>
+ <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field mb-3">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control",placeholder:"Email Id" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions",class:'btn btn-success' %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+

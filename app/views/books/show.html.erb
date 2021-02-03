@@ -1,0 +1,18 @@
+
+<div class="jumbotron">
+  <h1 class="display-4"> <strong><%= @book.book_name %> </strong></h1>
+  <p class="lead">Author:
+  <strong> <%= @book.author %></strong></p>
+  
+  <p class="lead">Category:
+  <strong> <%= @book.category %></strong></p>
+   <p class="lead"> Price:
+   <strong> <%= @book.price %></strong></p>
+   <br/>
+   
+  <p class="lead">
+    <%= link_to 'Edit', edit_book_path(@book),class:"btn btn-secondary" %> 
+<%= link_to 'Back', books_path,class:"btn btn-dark" %>
+
+  </p>
+</div>

@@ -1,0 +1,67 @@
+
+<div
+    class="p-5  bg-image"
+    style=" background-image: url('/assets/b8.jpg');
+      height: 600px;
+    "
+  >
+
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <br/>
+          <br/>
+          <h1 class="mb-3">Hotel Spices</h1>
+          <br/>
+     
+
+<p>
+  <strong>Date:</strong>
+  <%= @booking.bdate %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @booking.btime %>
+</p>
+
+<p>
+  <strong>No.of.People:</strong>
+  <%= @booking.people %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @booking.name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @booking.phone %>
+</p>
+
+<p>
+  <strong>Special Request:</strong>
+  <%= @booking.detail %>
+</p>
+
+<% if current_user && current_user.admin %>
+
+<%= link_to 'Edit', edit_booking_path(@booking),class:"btn btn-outline-warning" %> 
+<%= link_to 'Back', bookings_path,class:"btn btn-outline-info" %>
+
+<% end %>
+
+
+<br />
+<br />
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+

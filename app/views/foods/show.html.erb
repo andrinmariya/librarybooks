@@ -1,0 +1,50 @@
+<div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('/assets/p20.jpg');
+      height: 500px;
+    "
+  >
+
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-dark">
+
+
+<div class="bg-light p-5 rounded-lg m-3">
+ 
+
+
+
+<p class="display-4">
+  
+  <%= @food.name %>
+</p>
+
+<p class="lead">
+  <strong>Price:</strong>
+  <%= @food.price %>
+</p>
+
+<p class="lead">
+  <strong>Category:</strong>
+  <%= @food.category %>
+</p>
+<br/>
+<br/>
+<% if current_user && current_user.admin %>
+<%= link_to 'Edit', edit_food_path(@food),class:"btn btn-dark"  %> 
+<%= link_to 'Delete', food_path(@food),class:"btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+ <% elsif current_user %>
+<%= link_to 'Back', foods_path,class:"btn btn-dark"  %> 
+ <% else %>
+ <%= link_to 'Sign in', new_user_session_path,class:"btn btn-dark"  %> 
+
+  <% end %>
+
+             </div>
+          </div>
+       </div>
+    </div>
+</div>
+

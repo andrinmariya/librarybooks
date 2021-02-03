@@ -1,0 +1,53 @@
+<%= form_with(model: booking, local: true) do |form| %>
+  <% if booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+        <% booking.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <% form.label :bdate %>
+    <%= form.text_field :bdate,class:"form-control",placeholder:"Enter the Date in DD-MM-YYYY format" %>
+  </div>
+
+  <div class="field mb-3">
+    <% form.label :btime %>
+    <%= form.text_field :btime,class:"form-control",placeholder:"Time" %>
+  </div>
+
+  <div class="field mb-3">
+    <% form.label :people %>
+    <%= form.number_field :people,class:"form-control",placeholder:"Number of people" %>
+  </div>
+
+  <div class="field mb-3">
+    <% form.label :name %>
+    <%= form.text_field :name,class:"form-control",placeholder:"Your name" %>
+  </div>
+
+  <div class="field mb-3">
+    <% form.label :phone %>
+    <%= form.text_field :phone,class:"form-control",placeholder:"Personal phone number" %>
+  </div>
+
+  <div class="field mb-3">
+    <% form.label :detail %>
+    <%= form.text_area :detail,class:"form-control",placeholder:"Any special request for the table?" %>
+  </div>
+
+   <div class="field mb-3">
+    
+    <%= form.number_field :user_id, id: :booking_user_id,class:"form-control",value:current_user.id, type: :hidden %>
+  </div>
+ 
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

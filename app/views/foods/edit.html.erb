@@ -1,0 +1,26 @@
+<div
+    class="p-5 bg-image"
+    style="
+      background-image: url('/assets/p20.jpg');
+      height: 500px;
+    "
+  >
+
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-light">
+
+<h1>Editing Food</h1>
+<br/>
+<%= render 'form', food: @food %>
+<br/>
+
+<%= link_to 'Show', @food,class:"btn btn-dark"  %> 
+<%= link_to 'Back', foods_path %>
+
+            </br>
+            </div>
+          </div>
+        </div>
+     </div>       
+
